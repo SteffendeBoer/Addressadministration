@@ -7,6 +7,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SearchService } from '../search.service';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-salute',

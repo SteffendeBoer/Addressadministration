@@ -32,6 +32,8 @@ import {MatCardModule} from '@angular/material/card';
 import { TabledataComponent } from './tabledata/tabledata.component';
 import { ChartoptionComponent } from './chartoption/chartoption.component';
 import { ChartpreviewComponent } from './chartpreview/chartpreview.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -71,6 +73,7 @@ import { ChartpreviewComponent } from './chartpreview/chartpreview.component';
     MatDialogModule,
     MatStepperModule,
     MatCardModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

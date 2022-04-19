@@ -1,1 +1,53 @@
-<p>chartpreview works!</p>
+<div class="haupt-container"> 
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Balkendiagramm
+          </mat-panel-title>
+          <mat-panel-description>
+            Nützlich zum Vergleich von Kategorien
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <section class="example-section">
+            <mat-checkbox [(ngModel)]="box1" (change)="selectBox1(box1)" class="example-margin">Standard</mat-checkbox><br>
+            <mat-checkbox [(ngModel)]="box2" (change)="selectBox2(box1)" class="example-margin">Horizontal</mat-checkbox><br>
+            <mat-checkbox [(ngModel)]="box3" (change)="selectBox3(box1)" class="example-margin">Schwebend</mat-checkbox><br>
+            <mat-checkbox [(ngModel)]="box4" (change)="selectBox4(box1)" class="example-margin">Gelagert</mat-checkbox>
+          </section>
+        </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+          Liniendiagramm
+          </mat-panel-title>
+          <mat-panel-description>
+          Bilderinhalt hier rein {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>I'm visible because I am open</p>
+        <img src="assets/AufnahmeMock-Up.jpg" alt="...">
+  
+      </mat-expansion-panel>    
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+          Andere Diagramme
+          </mat-panel-title>
+          <mat-panel-description>
+          Bilderinhalt hier rein {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>I'm visible because I am open</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+    
+    <button mat-fab class="button" [@simpleFadeAnimation]="'in'" (click)="addSalute()" color="accent" [@simpleFadeAnimation]="'in'">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  
