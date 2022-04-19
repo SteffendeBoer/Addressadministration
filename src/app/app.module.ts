@@ -28,6 +28,10 @@ import { EditAddressComponent } from './edit-address/edit-address.component';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatCardModule} from '@angular/material/card';
+import { TabledataComponent } from './tabledata/tabledata.component';
+import { ChartoptionComponent } from './chartoption/chartoption.component';
+import { ChartpreviewComponent } from './chartpreview/chartpreview.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,9 @@ import {MatStepperModule} from '@angular/material/stepper';
     EditSaluteComponent,
     EditAddressComponent,
     EditContactComponent,
+    TabledataComponent,
+    ChartoptionComponent,
+    ChartpreviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +70,7 @@ import {MatStepperModule} from '@angular/material/stepper';
     ReactiveFormsModule,
     MatDialogModule,
     MatStepperModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

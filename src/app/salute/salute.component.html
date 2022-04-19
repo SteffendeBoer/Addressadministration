@@ -29,11 +29,8 @@
         </mat-panel-title>
         <mat-panel-description>
           Bilderinhalt hier rein {{panelOpenState ? 'open' : 'closed'}}
-          <div><img [attr.src]="[true? '/home/steffen/Adressverwaltung/Addressadministration-1/AufnahmeMock-Up.png' : '']"/></div>
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
-      <img src="/home/steffen/Adressverwaltung/Addressadministration-1/AufnahmeMock-Up.png">
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
@@ -46,6 +43,8 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <p>I'm visible because I am open</p>
+      <img src="assets/AufnahmeMock-Up.jpg" alt="...">
+
     </mat-expansion-panel>    
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
