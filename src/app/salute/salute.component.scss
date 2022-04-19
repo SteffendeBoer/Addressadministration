@@ -1,0 +1,20 @@
+.table-container{
+    width: 100%;
+	padding-bottom: 75px;
+	overflow: auto;
+}
+.table{
+	width: 100%;
+}
+.button{
+	z-index: 1;
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+}
+.haupt-container{
+	display: flex;
+	overflow: auto;
+	flex-direction: column;
+	height: 100%;
+}

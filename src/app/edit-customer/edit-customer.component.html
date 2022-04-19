@@ -1,0 +1,85 @@
+<div class="main-container">
+  <mat-tab-group (selectedTabChange)="setTab($event)" class="tabs">
+      <mat-tab label="Kunde"> 
+        <div class="main-content">
+          <mat-form-field *ngIf="customer">
+            <mat-label>Firmenname</mat-label>
+            <input matInput cdkFocusInitial placeholder="" [(ngModel)]="customer.companyname">
+          </mat-form-field>
+          <mat-form-field *ngIf="customer">
+            <mat-label>Gründung</mat-label>
+            <input matInput placeholder="" [(ngModel)]="customer.companyFounding">
+          </mat-form-field>
+          <mat-form-field *ngIf="customer">
+            <mat-label>E-Mail</mat-label>
+            <input matInput placeholder="" [(ngModel)]="customer.companyEmail">
+          </mat-form-field>
+          <button mat-button color="accent" style="width: 50%; align-self: center;" (click)="save()">Speichern</button>
+      </div>
+      </mat-tab>
+      <mat-tab label="Adresse">
+          <table mat-table [dataSource]="datasourceAddress" matSort #AddressSort class="table">
+
+              <ng-container matColumnDef="street">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Straße </th>
+                <td mat-cell *matCellDef="let element"> {{element.street}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="streetnumber">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Hausnummer </th>
+                <td mat-cell *matCellDef="let element"> {{element.streetnumber}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="location">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Ort </th>
+                <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="edit" style="min-width: min-content;" sticky>
+                <th mat-header-cell *matHeaderCellDef>Bearbeiten Löschen</th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-icon-button color="primary" (click)="editAddress(element)" style="margin-right: 20px;"><mat-icon>edit</mat-icon></button>
+                  <button mat-icon-button color="primary" (click)="deleteAddress(element.id)"><mat-icon>delete</mat-icon></button>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="columnsToDisplayAddress; sticky: true;"></tr>
+              <tr mat-row *matRowDef="let row; columns: columnsToDisplayAddress;"></tr>
+            </table>
+      </mat-tab>
+      <mat-tab label="Ansprechpartner">
+          <table mat-table [dataSource]="datasourceContact" matSort #ContactSort class="table">
+
+              <ng-container matColumnDef="firstname">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Vorname </th>
+                <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="lastname">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nachname </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="salution">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Anrede </th>
+                <td mat-cell *matCellDef="let element"> {{element.salut.salution}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="edit" style="min-width: min-content;" sticky>
+              <th mat-header-cell *matHeaderCellDef>Bearbeiten Löschen</th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="primary" (click)="editContact(element)" style="margin-right: 20px;"><mat-icon>edit</mat-icon></button>
+                <button mat-icon-button color="primary" (click)="deleteContact(element.id)"><mat-icon>delete</mat-icon></button>
+              </td>
+            </ng-container>
+              <tr mat-header-row *matHeaderRowDef="columnsToDisplayContact; sticky: true;"></tr>
+              <tr mat-row *matRowDef="let row; columns: columnsToDisplayContact;"></tr>
+            </table>
+      </mat-tab>
+  </mat-tab-group>
+  <div class="button-container" *ngIf="this.isButtonVisible" [@simpleFadeAnimation]="'in'">
+    <button mat-fab color="accent" (click)="addAny()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>
+

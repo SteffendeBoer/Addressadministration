@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Anrede</h1>
+<div mat-dialog-content class="main-content">
+    <mat-form-field *ngIf="salute">
+        <mat-label>Anrede</mat-label>
+        <input matInput cdkFocusInitial placeholder="" [(ngModel)]="salute.salution">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="save()">Speichern</button>
+    <button mat-button (click)="close()">Abbrechen</button>
+</div>
