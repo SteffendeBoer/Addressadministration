@@ -1,1 +1,84 @@
-<p>tabledata works!</p>
+<div class="haupt-container"> 
+    <mat-accordion style="margin-top: 2px;">
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                            (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title style="align-items: center;">
+                Datensatz1
+            </mat-panel-title>
+            <mat-panel-description style="align-items: center;">
+                <section class="example-section">
+                    <mat-checkbox [(ngModel)]="box1" (change)="selectBox1(box1)" class="example-margin">Auswahl</mat-checkbox>
+                </section>
+            </mat-panel-description>
+            <div style="flex-grow: 0; display: flex; min-width: 200px;" *ngIf="mobile == false">
+                <mat-form-field style="font-size: 12px;">
+                  <!-- <input matInput placeholder="Suche" [(ngModel)]="search.value" (keyup.enter)="suchen()"> -->
+                  <input matInput placeholder="Suche">
+
+                  <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+            </div>
+        </mat-expansion-panel-header>
+        <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+        
+            <!-- value Column -->
+            <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef> value </th>
+            <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+            </ng-container>
+                
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title style="align-items: center;">
+                    Datensatz2
+                </mat-panel-title>
+                <mat-panel-description style="align-items: center;">
+                    <section class="example-section">
+                        <mat-checkbox [(ngModel)]="box2" (change)="selectBox2(box2)" class="example-margin">Auswahl</mat-checkbox>
+                    </section>           
+                </mat-panel-description>
+                <div style="flex-grow: 0; display: flex; min-width: 200px;" *ngIf="mobile == false">
+                    <mat-form-field style="font-size: 12px;">
+                      <!-- <input matInput placeholder="Suche" [(ngModel)]="search.value" (keyup.enter)="suchen()"> -->
+                      <input matInput placeholder="Suche">
+    
+                      <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </div>
+            </mat-expansion-panel-header>
+            <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <!-- value Column -->
+            <ng-container matColumnDef="value">
+                <th mat-header-cell *matHeaderCellDef> value </th>
+                <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
