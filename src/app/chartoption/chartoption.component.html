@@ -11,62 +11,123 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="balkparent">
-        <div class="balkchild">
-          <section class="example-section">
-            <mat-checkbox [(ngModel)]="balk1" (change)="selectbalk1(balk1)" class="example-margin">Standard</mat-checkbox><br>
-            <mat-checkbox [(ngModel)]="balk2" (change)="selectbalk2(balk2)" class="example-margin">Horizontal</mat-checkbox><br>
-            <mat-checkbox [(ngModel)]="balk3" (change)="selectbalk3(balk3)" class="example-margin">Schwebend</mat-checkbox><br>
-            <mat-checkbox [(ngModel)]="balk4" (change)="selectbalk4(balk4)" class="example-margin">Gelagert</mat-checkbox>
-          </section>
-        </div>
-        <!--Standard-->
-        <div class="balkchild" [hidden]="balk1 == false">
-            <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Achsenbeschriftung X</mat-label>
-            <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
-            </mat-form-field>
-        
-            <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Achsenbeschriftung Y</mat-label>
-            <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
-            </mat-form-field>
-        </div>
-        <!--Horizontal-->
-        <div class="balkchild" [hidden]="balk2 == false">
-            <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Achsenbeschriftung X</mat-label>
-            <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
-            </mat-form-field>
-        
-            <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Achsenbeschriftung Y</mat-label>
-            <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
-            </mat-form-field>
-        </div>
-        <!--Schwebend-->
-        <div class="balkchild" [hidden]="balk3 == false">
-            <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Achsenbeschriftung X</mat-label>
-            <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
-            </mat-form-field>
-        
-            <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Achsenbeschriftung Y</mat-label>
-            <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
-            </mat-form-field>
-        </div>
-        <!--Gelagert-->
-        <div class="balkchild" [hidden]="balk4 == false">
-            <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Achsenbeschriftung X</mat-label>
-            <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
-            </mat-form-field>
-        
-            <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Achsenbeschriftung Y</mat-label>
-            <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
-            </mat-form-field>
-        </div>
+            <div class="balkchild">
+            <section class="example-section">
+                <mat-checkbox [(ngModel)]="balk1" (change)="selectbalk1(balk1)" class="example-margin">Standard</mat-checkbox><br>
+                <mat-checkbox [(ngModel)]="balk2" (change)="selectbalk2(balk2)" class="example-margin">Horizontal</mat-checkbox><br>
+                <mat-checkbox [(ngModel)]="balk3" (change)="selectbalk3(balk3)" class="example-margin">Schwebend</mat-checkbox><br>
+                <mat-checkbox [(ngModel)]="balk4" (change)="selectbalk4(balk4)" class="example-margin">Gelagert</mat-checkbox>
+            </section>
+            </div>
+            <!--Standard-->
+            <div class="balkchild" [hidden]="balk1 == false">
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Achsenbeschriftung X</mat-label>
+                <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
+                </mat-form-field>
+            
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Achsenbeschriftung Y</mat-label>
+                <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
+                </mat-form-field>
+                <div [hidden]="balk1 == false" style="justify-content:space-evenly">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select</mat-label>
+                        <mat-select>
+                        <mat-option value="one">Datensatz1</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select</mat-label>
+                        <mat-select>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!--Horizontal-->
+            <div class="balkchild" [hidden]="balk2 == false">
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Achsenbeschriftung X</mat-label>
+                <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
+                </mat-form-field>
+            
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Achsenbeschriftung Y</mat-label>
+                <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
+                </mat-form-field>
+                <div [hidden]="balk2 == false" style="justify-content:space-evenly">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select</mat-label>
+                        <mat-select>
+                        <mat-option value="one">Datensatz1</mat-option>
+                        <mat-option value="two">Datensatz2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select</mat-label>
+                        <mat-select>
+                            <mat-option value="one">Datensatz1</mat-option>
+                            <mat-option value="two">Datensatz2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!--Schwebend-->
+            <div class="balkchild" [hidden]="balk3 == false">
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Achsenbeschriftung X</mat-label>
+                <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
+                </mat-form-field>
+            
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Achsenbeschriftung Y</mat-label>
+                <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
+                </mat-form-field>
+                <div [hidden]="balk3 == false" style="justify-content:space-evenly">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select</mat-label>
+                        <mat-select>
+                        <mat-option value="one">Datensatz1</mat-option>
+                        <mat-option value="two">Datensatz2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select</mat-label>
+                        <mat-select>
+                            <mat-option value="one">Datensatz1</mat-option>
+                            <mat-option value="two">Datensatz2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!--Gelagert-->
+            <div class="balkchild" [hidden]="balk4 == false">
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Achsenbeschriftung X</mat-label>
+                <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
+                </mat-form-field>
+            
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Achsenbeschriftung Y</mat-label>
+                <textarea matInput placeholder="Geben sie die einzelnen Beschriftungen getrennt ein"></textarea>
+                </mat-form-field>
+                <div [hidden]="balk4 == false" style="justify-content:space-evenly">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select</mat-label>
+                        <mat-select>
+                            <mat-option value="one">Datensatz1</mat-option>
+                            <mat-option value="two">Datensatz2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select</mat-label>
+                        <mat-select>
+                            <mat-option value="one">Datensatz1</mat-option>
+                            <mat-option value="two">Datensatz2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
         </div>
       </mat-expansion-panel>
         <mat-expansion-panel (opened)="panelOpenState = true"
@@ -145,7 +206,7 @@
           Andere Diagrammtypen
           </mat-panel-title>
           <mat-panel-description>
-          Nützlich für Darstellung von Teilwerten von etwas ganzen
+          Nützlich für Darstellung von Teilwerten von etwas Ganzen
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="circparent">

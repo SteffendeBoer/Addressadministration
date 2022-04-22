@@ -1,4 +1,3 @@
-import { Salution } from './../salution';
 import { Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {MatDialog} from '@angular/material/dialog';
@@ -12,24 +11,6 @@ import {ThemePalette} from '@angular/material/core';
   selector: 'app-chartoption',
   templateUrl: './chartoption.component.html',
   styleUrls: ['./chartoption.component.scss'],
-  animations: [
-    // the fade-in/fade-out animation.
-    trigger('simpleFadeAnimation', [
-
-      // the "in" style determines the "resting" state of the element when it is visible.
-      state('in', style({opacity: 1})),
-
-      // fade in when created. this could also be written as transition('void => *')
-      transition(':enter', [
-        style({opacity: 0}),
-        animate(600 )
-      ]),
-
-      // fade out when destroyed. this could also be written as transition('void => *')
-      transition(':leave',
-        animate(600, style({opacity: 0})))
-    ])
-  ]
 })
 export class ChartoptionComponent implements OnInit {
   constructor(private http: HttpClient, public dialog: MatDialog) {

@@ -1,4 +1,3 @@
-import { Salution } from './../salution';
 import { Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {MatDialog} from '@angular/material/dialog';

@@ -20,13 +20,14 @@ import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { TabledataComponent } from './tabledata/tabledata.component';
 import { ChartoptionComponent } from './chartoption/chartoption.component';
 import { ChartpreviewComponent } from './chartpreview/chartpreview.component';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgChartsModule } from 'ng2-charts';
 import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
